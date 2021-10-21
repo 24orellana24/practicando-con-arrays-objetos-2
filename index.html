@@ -44,7 +44,7 @@ document.write(`<p>Primera atencion: ${radiologia[0].paciente} - ${radiologia[0]
 document.write(`<p>Primera atencion: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención: ${traumatologia[traumatologia.length -1].paciente} - ${traumatologia[traumatologia.length -1].prevision}.</p>`);
 document.write(`<p>Primera atencion: ${dental[0].paciente} - ${dental[0].prevision} | Última atención: ${dental[dental.length -1].paciente} - ${dental[dental.length -1].prevision}.</p>`);
 
-// R1. 
+// R1. Se agrgan al array traumatología, los nuevos elementos y se guardan en un nuevo arreglo llamado trauma, el cual se despliega por consola.
 document.write('<hr><h3>Ejercicio 1: ver resultados desplegado en consola</h3>')
 
 const traumatologia2 = [
@@ -58,13 +58,13 @@ const traumatologia2 = [
 const trauma = traumatologia.concat(traumatologia2);
 console.log(trauma);
 
-// R2.
+// R2. Se elimina del arreglo radiología el primer y ultimo elemento y el resiltado se depliega por consola.
 document.write('<hr><h3>Ejercicio 2: ver resultados desplegado en consola</h3>')
 radiologia.pop();
 radiologia.shift();
 console.log(radiologia);
 
-// R3.
+// R3. Se genera lista del arreglo dental, cuyos valores se encuentran separados por un guión. El listado se despliega en el DOM.
 document.write('<hr><h3>Ejercicio 3: listado de unidad "Dental"</h3>')
 const dental2 = []
 for (i = 0; i < dental.length; i++) {
@@ -79,7 +79,7 @@ for (i = 0; i < dental.length; i++) {
     dental2.length = 0
 }
 
-// R4.
+// R4. Se despliega en el DOM listado de todos los pacientes de todos los arreglos.
 document.write('<hr><h3>Ejercicio 4: listado de todos los pacientes</h3>')
 const listPaciente = radiologia.concat(trauma.concat(dental))
 for (i = 0; i < listPaciente.length; i++) {
@@ -88,7 +88,7 @@ for (i = 0; i < listPaciente.length; i++) {
     `)
 }
 
-// R5.
+// R5. Se despliega en el DOM listado de paciente que solo son previsión ISAPRE de la unidad Dental.
 document.write('<hr><h3>Ejercicio 5: listado de pacientes con "ISAPRE" en unidad "Dental"</h3>')
 const pacienteIsapre = dental.filter(function(pIsapre) {
     return pIsapre.prevision === 'ISAPRE'    
@@ -100,7 +100,7 @@ for (i = 0; i < pacienteIsapre.length; i++) {
     `)
 }
 
-// R6.
+// R6. Se despliega en el DOM listado de paciente que solo son previsión FONASA de la unidad Traumatología.
 document.write('<hr><h3>Ejercicio 6: listado de pacientes con "FONASA" en unidad "Traumatología"</h3>')
 const pacienteFonasa = trauma.filter(function(pFonasa) {
     return pFonasa.prevision === 'FONASA'    
